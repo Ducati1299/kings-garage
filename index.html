@@ -1,0 +1,2123 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KING GARAGE 👑</title>
+
+<style>
+:root{
+  --bg:#080808;
+  --bg2:#111111;
+  --card:#151515;
+  --gold:#d4af37;
+  --gold2:#f5d76e;
+  --text:#ffffff;
+  --muted:#aaaaaa;
+  --line:#3d3214;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* HEADER */
+
+header{
+  padding:35px 20px;
+  text-align:center;
+  background:
+  linear-gradient(135deg,#050505,#17120a,#050505);
+  border-bottom:2px solid var(--gold);
+}
+
+header h1{
+  margin:0;
+  color:var(--gold);
+  font-size:36px;
+  letter-spacing:2px;
+}
+
+header p{
+  color:var(--gold2);
+  margin-top:8px;
+}
+
+/* MENU */
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:10;
+
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+
+  padding:12px;
+
+  background:#0b0b0b;
+
+  border-bottom:1px solid var(--line);
+}
+
+nav button{
+
+  background:var(--card);
+
+  color:var(--gold);
+
+  border:1px solid var(--line);
+
+  padding:10px 15px;
+
+  border-radius:10px;
+
+  white-space:nowrap;
+
+  cursor:pointer;
+}
+
+nav button:hover{
+  background:var(--gold);
+  color:#000;
+}
+
+/* MAIN */
+
+main{
+  max-width:1000px;
+  margin:auto;
+  padding:18px;
+}
+
+section{
+  display:none;
+}
+
+section.active{
+  display:block;
+}
+
+.card{
+
+  background:var(--card);
+
+  border:1px solid var(--line);
+
+  border-radius:18px;
+
+  padding:20px;
+
+  margin-bottom:18px;
+
+  box-shadow:
+  0 5px 25px rgba(0,0,0,.5);
+}
+
+.card h2{
+  margin-top:0;
+  color:var(--gold);
+}
+
+/* GRID */
+
+.grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(200px,1fr));
+
+  gap:15px;
+}
+
+.stat{
+
+  font-size:28px;
+
+  font-weight:bold;
+
+  color:var(--gold2);
+
+}
+
+/* FORM */
+
+input,
+select{
+
+  width:100%;
+
+  padding:13px;
+
+  margin:7px 0;
+
+  background:#0a0a0a;
+
+  color:white;
+
+  border:1px solid var(--line);
+
+  border-radius:10px;
+}
+
+button.primary{
+
+  width:100%;
+
+  padding:13px;
+
+  margin-top:8px;
+
+  border:none;
+
+  border-radius:10px;
+
+  background:var(--gold);
+
+  color:#000;
+
+  font-weight:bold;
+
+  cursor:pointer;
+}
+
+button.primary:hover{
+  background:var(--gold2);
+}
+
+/* LIST */
+
+.item{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  gap:10px;
+
+  padding:14px 0;
+
+  border-bottom:
+  1px solid var(--line);
+}
+
+.item:last-child{
+  border-bottom:none;
+}
+
+.item small{
+  color:var(--muted);
+}
+
+.delete{
+
+  background:#3b1111;
+
+  color:#ffaaaa;
+
+  border:none;
+
+  padding:8px 10px;
+
+  border-radius:8px;
+
+  cursor:pointer;
+}
+
+.empty{
+
+  text-align:center;
+
+  color:var(--muted);
+
+  padding:20px;
+}
+
+/* CAR CARDS */
+
+.car{
+
+  text-align:center;
+
+  padding:25px;
+
+  border-radius:18px;
+
+  border:1px solid var(--gold);
+
+  background:
+  linear-gradient(
+  145deg,
+  #1a160c,
+  #0b0b0b);
+}
+
+.car h2{
+
+  color:var(--gold);
+
+  margin-bottom:5px;
+}
+
+.badge{
+
+  display:inline-block;
+
+  background:var(--gold);
+
+  color:#000;
+
+  padding:5px 12px;
+
+  border-radius:20px;
+
+  font-weight:bold;
+
+  margin-top:10px;
+}
+
+/* GALLERY */
+
+.gallery{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(180px,1fr));
+
+  gap:12px;
+}
+
+.photo{
+
+  background:#0b0b0b;
+
+  border:1px dashed var(--gold);
+
+  min-height:150px;
+
+  border-radius:14px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  color:var(--muted);
+
+  text-align:center;
+
+  padding:10px;
+}
+
+/* FOOTER */
+
+footer{
+
+  text-align:center;
+
+  padding:30px;
+
+  color:var(--gold);
+
+  border-top:
+  1px solid var(--line);
+
+  margin-top:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<h1>👑 KING GARAGE</h1>
+
+<p>Honda Civic FD • Ducati Hyper Motor</p>
+
+</header>
+
+
+<!-- MENU -->
+
+<nav>
+
+<button onclick="showPage('home')">
+🏠 หน้าหลัก
+</button>
+
+<button onclick="showPage('cars')">
+🚗 รถของฉัน
+</button>
+
+<button onclick="showPage('mods')">
+🔧 ของแต่ง
+</button>
+
+<button onclick="showPage('fuel')">
+⛽ น้ำมัน
+</button>
+
+<button onclick="showPage('expenses')">
+💸 ค่าใช้จ่าย
+</button>
+
+<button onclick="showPage('maintenance')">
+🛠️ บันทึกซ่อม
+</button>
+
+<button onclick="showPage('stats')">
+🏆 สถิติ
+</button>
+
+<button onclick="showPage('gallery')">
+📸 แกลเลอรี
+</button>
+
+</nav>
+
+
+
+<main>
+
+
+<!-- HOME -->
+
+<section
+id="home"
+class="active">
+
+<div class="card">
+
+<h2>👑 KING GARAGE</h2>
+
+<p>
+ศูนย์รวมข้อมูลรถและโปรเจกต์ของฉัน
+</p>
+
+</div>
+
+
+<div class="grid">
+
+<div class="card">
+
+<p>💸 ค่าใช้จ่ายทั้งหมด</p>
+
+<div
+class="stat"
+id="totalMoney">
+
+0 บาท
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<p>🔧 จำนวนของแต่ง</p>
+
+<div
+class="stat"
+id="modCount">
+
+0
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<p>⛽ การบันทึกน้ำมัน</p>
+
+<div
+class="stat"
+id="fuelCount">
+
+0
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<p>🛠️ รายการซ่อม</p>
+
+<div
+class="stat"
+id="maintenanceCount">
+
+0
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- CARS -->
+
+<section id="cars">
+
+<div class="grid">
+
+<div class="car">
+
+<h2>
+🚗 Honda Civic FD
+</h2>
+
+<p>
+รถยนต์
+</p>
+
+<span class="badge">
+KING GARAGE
+</span>
+
+</div>
+
+
+<div class="car">
+
+<h2>
+🏍️ Ducati Hyper Motor
+</h2>
+
+<p>
+Motorcycle
+</p>
+
+<span class="badge">
+KING GARAGE
+</span>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>➕ เพิ่มยานพาหนะ</h2>
+
+<input
+id="vehicleName"
+placeholder="ชื่อรถหรือมอเตอร์ไซค์">
+
+<select id="vehicleType">
+
+<option>
+🚗 รถยนต์
+</option>
+
+<option>
+🏍️ มอเตอร์ไซค์
+</option>
+
+</select>
+
+<button
+class="primary"
+onclick="addVehicle()">
+
+เพิ่มรถ
+
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h2>🚘 ยานพาหนะทั้งหมด</h2>
+
+<div
+id="vehicleList">
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- MODS -->
+
+<section id="mods">
+
+<div class="card">
+
+<h2>
+🔧 เพิ่มของแต่ง
+</h2>
+
+
+<select id="modVehicle">
+
+<option>
+Honda Civic FD
+</option>
+
+<option>
+Ducati Hyper Motor
+</option>
+
+</select>
+
+
+<input
+id="modName"
+placeholder="ชื่อของแต่ง">
+
+
+<input
+id="modPrice"
+type="number"
+placeholder="ราคา (บาท)">
+
+
+<button
+class="primary"
+onclick="addMod()">
+
+➕ เพิ่มของแต่ง
+
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+รายการของแต่ง
+</h2>
+
+<div
+id="modsList">
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- FUEL -->
+
+<section id="fuel">
+
+<div class="card">
+
+<h2>
+⛽ บันทึกน้ำมัน
+</h2>
+
+
+<select id="fuelVehicle">
+
+<option>
+Honda Civic FD
+</option>
+
+<option>
+Ducati Hyper Motor
+</option>
+
+</select>
+
+
+<input
+id="fuelDistance"
+type="number"
+placeholder="ระยะทางที่วิ่ง (กม.)">
+
+
+<input
+id="fuelLiters"
+type="number"
+step="0.01"
+placeholder="น้ำมัน (ลิตร)">
+
+
+<input
+id="fuelPrice"
+type="number"
+placeholder="ค่าใช้จ่าย (บาท)">
+
+
+<button
+class="primary"
+onclick="addFuel()">
+
+บันทึกการเติมน้ำมัน
+
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+📊 ประวัติน้ำมัน
+</h2>
+
+<div
+id="fuelList">
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- EXPENSES -->
+
+<section id="expenses">
+
+<div class="card">
+
+<h2>
+💸 เพิ่มค่าใช้จ่าย
+</h2>
+
+
+<select id="expenseVehicle">
+
+<option>
+Honda Civic FD
+</option>
+
+<option>
+Ducati Hyper Motor
+</option>
+
+</select>
+
+
+<input
+id="expenseName"
+placeholder="รายการ">
+
+
+<input
+id="expensePrice"
+type="number"
+placeholder="จำนวนเงิน (บาท)">
+
+
+<select id="expenseType">
+
+<option>
+🔧 ของแต่ง
+</option>
+
+<option>
+🛠️ ซ่อมบำรุง
+</option>
+
+<option>
+🛞 ยาง
+</option>
+
+<option>
+📄 อื่น ๆ
+</option>
+
+</select>
+
+
+<button
+class="primary"
+onclick="addExpense()">
+
+เพิ่มค่าใช้จ่าย
+
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+📋 รายการค่าใช้จ่าย
+</h2>
+
+<div
+id="expenseList">
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- MAINTENANCE -->
+
+<section id="maintenance">
+
+<div class="card">
+
+<h2>
+🛠️ บันทึกการซ่อม
+</h2>
+
+
+<select id="maintenanceVehicle">
+
+<option>
+Honda Civic FD
+</option>
+
+<option>
+Ducati Hyper Motor
+</option>
+
+</select>
+
+
+<input
+id="maintenanceName"
+placeholder="รายการซ่อม">
+
+
+<input
+id="maintenanceDate"
+type="date">
+
+
+<input
+id="maintenanceMileage"
+type="number"
+placeholder="เลขไมล์">
+
+
+<button
+class="primary"
+onclick="addMaintenance()">
+
+บันทึก
+
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+📅 ประวัติการซ่อม
+</h2>
+
+<div
+id="maintenanceList">
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- STATS -->
+
+<section id="stats">
+
+<div class="card">
+
+<h2>
+🏆 บันทึกสถิติรถ
+</h2>
+
+
+<select id="statVehicle">
+
+<option>
+Honda Civic FD
+</option>
+
+<option>
+Ducati Hyper Motor
+</option>
+
+</select>
+
+
+<input
+id="statName"
+placeholder="เช่น 0-100 km/h">
+
+
+<input
+id="statValue"
+placeholder="เช่น 6.5 วินาที">
+
+
+<button
+class="primary"
+onclick="addStat()">
+
+บันทึกสถิติ
+
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+🏁 สถิติทั้งหมด
+</h2>
+
+<div
+id="statsList">
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- GALLERY -->
+
+<section id="gallery">
+
+<div class="card">
+
+<h2>
+📸 KING GARAGE GALLERY
+</h2>
+
+<p>
+ตอนนี้คุณสามารถเพิ่มรูปในโค้ดภายหลังได้
+</p>
+
+<div
+class="gallery"
+id="galleryList">
+
+<div class="photo">
+📸 Honda Civic FD
+</div>
+
+<div class="photo">
+📸 Ducati Hyper Motor
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+👑 KING GARAGE
+
+<br>
+
+<small>
+Honda Civic FD • Ducati Hyper Motor
+</small>
+
+</footer>
+
+
+
+<script>
+
+
+/* =====================
+DATA
+===================== */
+
+let mods =
+JSON.parse(
+localStorage.getItem(
+"king_mods"
+)
+|| "[]"
+);
+
+
+let fuel =
+JSON.parse(
+localStorage.getItem(
+"king_fuel"
+)
+|| "[]"
+);
+
+
+let expenses =
+JSON.parse(
+localStorage.getItem(
+"king_expenses"
+)
+|| "[]"
+);
+
+
+let maintenance =
+JSON.parse(
+localStorage.getItem(
+"king_maintenance"
+)
+|| "[]"
+);
+
+
+let stats =
+JSON.parse(
+localStorage.getItem(
+"king_stats"
+)
+|| "[]"
+);
+
+
+let vehicles =
+JSON.parse(
+localStorage.getItem(
+"king_vehicles"
+)
+||
+JSON.stringify([
+{
+name:"Honda Civic FD",
+type:"🚗 รถยนต์"
+},
+{
+name:"Ducati Hyper Motor",
+type:"🏍️ มอเตอร์ไซค์"
+}
+])
+);
+
+
+
+/* =====================
+SAVE
+===================== */
+
+function saveAll(){
+
+localStorage.setItem(
+"king_mods",
+JSON.stringify(mods)
+);
+
+
+localStorage.setItem(
+"king_fuel",
+JSON.stringify(fuel)
+);
+
+
+localStorage.setItem(
+"king_expenses",
+JSON.stringify(expenses)
+);
+
+
+localStorage.setItem(
+"king_maintenance",
+JSON.stringify(maintenance)
+);
+
+
+localStorage.setItem(
+"king_stats",
+JSON.stringify(stats)
+);
+
+
+localStorage.setItem(
+"king_vehicles",
+JSON.stringify(vehicles)
+);
+
+
+renderAll();
+
+}
+
+
+
+/* =====================
+PAGE
+===================== */
+
+function showPage(page){
+
+document
+.querySelectorAll("section")
+.forEach(function(section){
+
+section
+.classList
+.remove("active");
+
+});
+
+
+document
+.getElementById(page)
+.classList
+.add("active");
+
+}
+
+
+
+/* =====================
+VEHICLES
+===================== */
+
+function addVehicle(){
+
+let name =
+document
+.getElementById("vehicleName")
+.value;
+
+
+let type =
+document
+.getElementById("vehicleType")
+.value;
+
+
+if(!name){
+
+alert(
+"กรุณาใส่ชื่อรถ"
+);
+
+return;
+
+}
+
+
+vehicles.push({
+
+name:name,
+
+type:type
+
+});
+
+
+document
+.getElementById("vehicleName")
+.value="";
+
+
+saveAll();
+
+}
+
+
+
+/* =====================
+MODS
+===================== */
+
+function addMod(){
+
+let vehicle =
+document
+.getElementById("modVehicle")
+.value;
+
+
+let name =
+document
+.getElementById("modName")
+.value;
+
+
+let price =
+Number(
+document
+.getElementById("modPrice")
+.value
+);
+
+
+if(!name){
+
+alert(
+"กรุณาใส่ชื่อของแต่ง"
+);
+
+return;
+
+}
+
+
+mods.push({
+
+vehicle:vehicle,
+
+name:name,
+
+price:price
+
+});
+
+
+document
+.getElementById("modName")
+.value="";
+
+
+document
+.getElementById("modPrice")
+.value="";
+
+
+saveAll();
+
+}
+
+
+
+/* =====================
+FUEL
+===================== */
+
+function addFuel(){
+
+let vehicle =
+document
+.getElementById("fuelVehicle")
+.value;
+
+
+let distance =
+Number(
+document
+.getElementById("fuelDistance")
+.value
+);
+
+
+let liters =
+Number(
+document
+.getElementById("fuelLiters")
+.value
+);
+
+
+let price =
+Number(
+document
+.getElementById("fuelPrice")
+.value
+);
+
+
+if(
+!distance
+||
+!liters
+){
+
+alert(
+"กรุณากรอกข้อมูล"
+);
+
+return;
+
+}
+
+
+fuel.push({
+
+vehicle:vehicle,
+
+distance:distance,
+
+liters:liters,
+
+price:price
+
+});
+
+
+document
+.getElementById("fuelDistance")
+.value="";
+
+
+document
+.getElementById("fuelLiters")
+.value="";
+
+
+document
+.getElementById("fuelPrice")
+.value="";
+
+
+saveAll();
+
+}
+
+
+
+/* =====================
+EXPENSES
+===================== */
+
+function addExpense(){
+
+let vehicle =
+document
+.getElementById("expenseVehicle")
+.value;
+
+
+let name =
+document
+.getElementById("expenseName")
+.value;
+
+
+let price =
+Number(
+document
+.getElementById("expensePrice")
+.value
+);
+
+
+let type =
+document
+.getElementById("expenseType")
+.value;
+
+
+if(
+!name
+||
+!price
+){
+
+alert(
+"กรุณากรอกข้อมูล"
+);
+
+return;
+
+}
+
+
+expenses.push({
+
+vehicle:vehicle,
+
+name:name,
+
+price:price,
+
+type:type
+
+});
+
+
+document
+.getElementById("expenseName")
+.value="";
+
+
+document
+.getElementById("expensePrice")
+.value="";
+
+
+saveAll();
+
+}
+
+
+
+/* =====================
+MAINTENANCE
+===================== */
+
+function addMaintenance(){
+
+let vehicle =
+document
+.getElementById("maintenanceVehicle")
+.value;
+
+
+let name =
+document
+.getElementById("maintenanceName")
+.value;
+
+
+let date =
+document
+.getElementById("maintenanceDate")
+.value;
+
+
+let mileage =
+document
+.getElementById("maintenanceMileage")
+.value;
+
+
+if(!name){
+
+alert(
+"กรุณาใส่รายการ"
+);
+
+return;
+
+}
+
+
+maintenance.push({
+
+vehicle:vehicle,
+
+name:name,
+
+date:date,
+
+mileage:mileage
+
+});
+
+
+document
+.getElementById("maintenanceName")
+.value="";
+
+
+document
+.getElementById("maintenanceDate")
+.value="";
+
+
+document
+.getElementById("maintenanceMileage")
+.value="";
+
+
+saveAll();
+
+}
+
+
+
+/* =====================
+STATS
+===================== */
+
+function addStat(){
+
+let vehicle =
+document
+.getElementById("statVehicle")
+.value;
+
+
+let name =
+document
+.getElementById("statName")
+.value;
+
+
+let value =
+document
+.getElementById("statValue")
+.value;
+
+
+if(
+!name
+||
+!value
+){
+
+alert(
+"กรุณากรอกข้อมูล"
+);
+
+return;
+
+}
+
+
+stats.push({
+
+vehicle:vehicle,
+
+name:name,
+
+value:value
+
+});
+
+
+document
+.getElementById("statName")
+.value="";
+
+
+document
+.getElementById("statValue")
+.value="";
+
+
+saveAll();
+
+}
+
+
+
+/* =====================
+DELETE
+===================== */
+
+function deleteItem(
+type,
+index
+){
+
+if(type==="mod"){
+
+mods.splice(
+index,
+1
+);
+
+}
+
+
+if(type==="fuel"){
+
+fuel.splice(
+index,
+1
+);
+
+}
+
+
+if(type==="expense"){
+
+expenses.splice(
+index,
+1
+);
+
+}
+
+
+if(type==="maintenance"){
+
+maintenance.splice(
+index,
+1
+);
+
+}
+
+
+if(type==="stat"){
+
+stats.splice(
+index,
+1
+);
+
+}
+
+
+saveAll();
+
+}
+
+
+
+/* =====================
+RENDER
+===================== */
+
+function renderAll(){
+
+renderMods();
+
+renderFuel();
+
+renderExpenses();
+
+renderMaintenance();
+
+renderStats();
+
+renderVehicles();
+
+updateDashboard();
+
+}
+
+
+
+/* MODS */
+
+function renderMods(){
+
+let list =
+document
+.getElementById(
+"modsList"
+);
+
+
+if(
+mods.length===0
+){
+
+list.innerHTML=
+"<div class='empty'>ยังไม่มีของแต่ง</div>";
+
+return;
+
+}
+
+
+list.innerHTML=
+"";
+
+
+mods.forEach(
+function(item,index){
+
+list.innerHTML+=
+
+`<div class="item">
+
+<div>
+
+<b>
+🔧 ${item.name}
+</b>
+
+<br>
+
+<small>
+${item.vehicle}
+• ${item.price.toLocaleString()} บาท
+</small>
+
+</div>
+
+<button
+class="delete"
+onclick="deleteItem('mod',${index})">
+
+ลบ
+
+</button>
+
+</div>`;
+
+});
+
+}
+
+
+
+/* FUEL */
+
+function renderFuel(){
+
+let list =
+document
+.getElementById(
+"fuelList"
+);
+
+
+if(
+fuel.length===0
+){
+
+list.innerHTML=
+"<div class='empty'>ยังไม่มีข้อมูล</div>";
+
+return;
+
+}
+
+
+list.innerHTML=
+"";
+
+
+fuel.forEach(
+function(item,index){
+
+let efficiency =
+item.distance /
+item.liters;
+
+
+list.innerHTML+=
+
+`<div class="item">
+
+<div>
+
+<b>
+⛽ ${item.vehicle}
+</b>
+
+<br>
+
+<small>
+
+${item.distance} กม.
+
+•
+
+${item.liters} ลิตร
+
+•
+
+${efficiency.toFixed(2)} km/L
+
+•
+
+${item.price.toLocaleString()} บาท
+
+</small>
+
+</div>
+
+<button
+class="delete"
+onclick="deleteItem('fuel',${index})">
+
+ลบ
+
+</button>
+
+</div>`;
+
+});
+
+}
+
+
+
+/* EXPENSES */
+
+function renderExpenses(){
+
+let list =
+document
+.getElementById(
+"expenseList"
+);
+
+
+if(
+expenses.length===0
+){
+
+list.innerHTML=
+"<div class='empty'>ยังไม่มีข้อมูล</div>";
+
+return;
+
+}
+
+
+list.innerHTML=
+"";
+
+
+expenses.forEach(
+function(item,index){
+
+list.innerHTML+=
+
+`<div class="item">
+
+<div>
+
+<b>
+${item.type}
+
+${item.name}
+</b>
+
+<br>
+
+<small>
+
+${item.vehicle}
+
+•
+
+${item.price.toLocaleString()} บาท
+
+</small>
+
+</div>
+
+<button
+class="delete"
+onclick="deleteItem('expense',${index})">
+
+ลบ
+
+</button>
+
+</div>`;
+
+});
+
+}
+
+
+
+/* MAINTENANCE */
+
+function renderMaintenance(){
+
+let list =
+document
+.getElementById(
+"maintenanceList"
+);
+
+
+if(
+maintenance.length===0
+){
+
+list.innerHTML=
+"<div class='empty'>ยังไม่มีข้อมูล</div>";
+
+return;
+
+}
+
+
+list.innerHTML=
+"";
+
+
+maintenance.forEach(
+function(item,index){
+
+list.innerHTML+=
+
+`<div class="item">
+
+<div>
+
+<b>
+🛠️ ${item.name}
+</b>
+
+<br>
+
+<small>
+
+${item.vehicle}
+
+•
+
+${item.date || "-"}
+
+•
+
+${item.mileage || "-"} กม.
+
+</small>
+
+</div>
+
+<button
+class="delete"
+onclick="deleteItem('maintenance',${index})">
+
+ลบ
+
+</button>
+
+</div>`;
+
+});
+
+}
+
+
+
+/* STATS */
+
+function renderStats(){
+
+let list =
+document
+.getElementById(
+"statsList"
+);
+
+
+if(
+stats.length===0
+){
+
+list.innerHTML=
+"<div class='empty'>ยังไม่มีสถิติ</div>";
+
+return;
+
+}
+
+
+list.innerHTML=
+"";
+
+
+stats.forEach(
+function(item,index){
+
+list.innerHTML+=
+
+`<div class="item">
+
+<div>
+
+<b>
+🏆 ${item.name}
+</b>
+
+<br>
+
+<small>
+
+${item.vehicle}
+
+•
+
+${item.value}
+
+</small>
+
+</div>
+
+<button
+class="delete"
+onclick="deleteItem('stat',${index})">
+
+ลบ
+
+</button>
+
+</div>`;
+
+});
+
+}
+
+
+
+/* VEHICLES */
+
+function renderVehicles(){
+
+let list =
+document
+.getElementById(
+"vehicleList"
+);
+
+
+list.innerHTML=
+"";
+
+
+vehicles.forEach(
+function(item){
+
+list.innerHTML+=
+
+`<div class="item">
+
+<div>
+
+<b>
+${item.name}
+</b>
+
+<br>
+
+<small>
+${item.type}
+</small>
+
+</div>
+
+</div>`;
+
+});
+
+}
+
+
+
+/* DASHBOARD */
+
+function updateDashboard(){
+
+let total=0;
+
+
+/* ของแต่ง */
+
+mods.forEach(
+function(item){
+
+total+=item.price;
+
+});
+
+
+/* ค่าใช้จ่าย */
+
+expenses.forEach(
+function(item){
+
+total+=item.price;
+
+});
+
+
+/* น้ำมัน */
+
+fuel.forEach(
+function(item){
+
+total+=item.price;
+
+});
+
+
+document
+.getElementById(
+"totalMoney"
+)
+.innerText=
+
+total.toLocaleString()
+
++
+
+" บาท";
+
+
+document
+.getElementById(
+"modCount"
+)
+.innerText=
+
+mods.length;
+
+
+document
+.getElementById(
+"fuelCount"
+)
+.innerText=
+
+fuel.length;
+
+
+document
+.getElementById(
+"maintenanceCount"
+)
+.innerText=
+
+maintenance.length;
+
+}
+
+
+
+/* START */
+
+renderAll();
+
+
+</script>
+
+
+</body>
+</html>
